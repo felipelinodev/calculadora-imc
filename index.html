@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <!--A ORDEM DE PRIORIDADE CIMA PARA BAIXO, style.css TEM MAIS PRIORIDADE-->
+</head>
+
+<body>
+    <main>
+        <section class="input-date">
+            <form class="form-main-container">
+                <div class="group-btn-sex">
+                    <button class="btn-sex masc-btn" onclick="clickMasc()">
+                        <svg id="a" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+                            <path
+                                d="m6.86.43c0-.24.19-.43.43-.43h2.29c.24,0,.43.19.43.43v2.29c0,.24-.19.43-.43.43s-.43-.19-.43-.43v-1.25l-2.28,2.27c.54.68.85,1.53.85,2.4,0,1.02-.4,2.01-1.12,2.73-.72.73-1.7,1.13-2.72,1.14-1.02,0-2.01-.4-2.73-1.12-.36-.36-.64-.78-.84-1.25C.1,7.16,0,6.66,0,6.15c0-.51.1-1.01.29-1.48.19-.47.48-.89.83-1.25.36-.36.78-.64,1.25-.84.47-.19.97-.3,1.48-.3.51,0,1.01.1,1.48.29.34.14.65.32.93.55l2.28-2.27h-1.25c-.24,0-.43-.19-.43-.43Zm-1.86,2.94c-.36-.15-.75-.23-1.15-.23-.39,0-.78.08-1.15.23-.36.15-.69.37-.97.65-.28.28-.5.61-.65.97-.15.36-.23.75-.23,1.15,0,.39.08.78.23,1.15.15.36.37.69.65.97.56.56,1.33.88,2.12.87.8,0,1.56-.32,2.12-.88.56-.56.88-1.33.87-2.12,0-.8-.32-1.56-.88-2.12-.28-.28-.61-.5-.97-.65Z"
+                                style="fill-rule: evenodd; stroke-width: 0px;" />
+                        </svg>
+                        Homem
+                    </button>
+                    <button class="btn-sex fem-btn" onclick="clickFem()">
+                        <?xml version="1.0" encoding="UTF-8"?>
+                        <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.88 9.94">
+                            <path
+                                d="m1.01,1.01C1.65.36,2.53,0,3.44,0s1.79.36,2.43,1.01c.65.65,1.01,1.52,1.01,2.43s-.36,1.79-1.01,2.43c-.55.55-1.28.9-2.05.99v1.3h.64c.21,0,.38.17.38.38s-.17.38-.38.38h-.64v.64c0,.21-.17.38-.38.38s-.38-.17-.38-.38v-.64h-.64c-.21,0-.38-.17-.38-.38s.17-.38.38-.38h.64v-1.3c-.77-.09-1.5-.43-2.05-.99-.65-.65-1.01-1.52-1.01-2.43S.36,1.65,1.01,1.01Zm2.43-.24c-.71,0-1.39.28-1.89.78-.5.5-.78,1.18-.78,1.89s.28,1.39.78,1.89c.5.5,1.18.78,1.89.78s1.39-.28,1.89-.78c.5-.5.78-1.18.78-1.89s-.28-1.39-.78-1.89c-.5-.5-1.18-.78-1.89-.78Z"
+                                style="fill-rule:evenodd; stroke-width:0px;" />
+                        </svg>
+                        Mulher
+                    </button>
+                </div>
+                <fieldset class="group-input-number">
+                    <input class="main-number" type="number" step="0.01" name="idade" id="idade" placeholder="Idade">
+                    <input class="main-number" type="number" step="0.01" name="peso" id="peso" placeholder="Peso(kg)">
+                    <input class="main-number" type="number" step="0.01" name="altura" id="altura" placeholder="Altura(m)">
+                </fieldset>
+                <div class="group-btn-submit">
+                    <div class="btn-load">
+                        <svg width="30" height="26" viewBox="0 0 30 26" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.27771 4.85543C7.92793 4.45908 7.96569 3.85423 8.36204 3.50445C10.5628 1.56228 13.3793 0.46064 16.3138 0.39425C19.2483 0.327859 22.1117 1.30099 24.3981 3.14165C26.6845 4.98231 28.2466 7.57198 28.8082 10.453C29.3699 13.3339 28.895 16.3207 27.4675 18.8854C26.04 21.4501 23.7518 23.4276 21.0073 24.4684C18.2628 25.5092 15.2387 25.5462 12.4696 24.573C9.70038 23.5997 7.36442 21.6789 5.87452 19.1499C4.65215 17.075 4.06386 14.7004 4.16312 12.3164L2.28367 13.9751C1.88733 14.3248 1.28247 14.2871 0.932691 13.8908C0.582908 13.4944 0.620653 12.8896 1.017 12.5398L4.84443 9.16198C5.24077 8.8122 5.84563 8.84994 6.19541 9.24629L9.57321 13.0737C9.923 13.4701 9.88525 14.0749 9.48891 14.4247C9.09256 14.7745 8.48771 14.7367 8.13793 14.3404L6.09751 12.0284C5.93327 14.1682 6.42672 16.3159 7.52386 18.1782C8.78455 20.3181 10.7611 21.9435 13.1043 22.767C15.4474 23.5905 18.0063 23.5591 20.3285 22.6785C22.6508 21.7978 24.587 20.1246 25.7949 17.9544C27.0028 15.7843 27.4046 13.257 26.9293 10.8193C26.4541 8.38151 25.1323 6.19025 23.1977 4.63277C21.2631 3.07529 18.8401 2.25188 16.3571 2.30805C13.8741 2.36423 11.4909 3.29638 9.62869 4.93976C9.23234 5.28954 8.62749 5.25178 8.27771 4.85543Z" />
+                        </svg>
+                    </div>
+
+                    <button class="calculator-button" onclick="Calcular()">Calcular</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="output-date">
+            <div class="group-feedback">
+                <h2 id="feeback-top"> Tudo Certo :) </h2>
+                <p id="feeback-top2">Continue se cuidando!!</p>
+                <!--TEM UMA TAG INVISIVEL NO SPAN-->
+                <div class="line"></div>
+            </div>
+
+            <div class="group-result-border">
+                <div class="group-result">
+                    <div class="imc-number" style="padding: 0;" id="imc-output">24.50</div>
+                    <div class="result-interpretation">
+                        <p class="label">Interpretação do IMC</p>
+                        <div class="resultado-label">
+                            <b id="class-faixa-peso">Normal</b>
+                            <p id="media-faixa-peso">18.5 a 24.9</p>
+                            <p id="kg-peso">78kg</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <article class="group-imc-article">
+                <h3>Oque é IMC?</h3>
+                <P>
+                    O índice de massa corporal (IMC) usa variáveis corporais para indicar se o peso é saudável. Porém, profissionais de saúde não utilizam apenas o IMC para avaliar
+                    a saúde. Consulte seu médico para dúvidas.<a href="https://www.sistemasca.com/blog/160/o-que-e-imc-entenda-a-importancia-desse-protocolo-na-avaliacao-fisica" class="external-link">Ler mais</a>
+                </P>
+            </article>
+        </section>
+
+
+        <div id="teste"></div>
+        <script src="script.js"></script>
+    </main>
+</body>
+
+</html>

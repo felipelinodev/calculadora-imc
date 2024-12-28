@@ -1,0 +1,323 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,400;1,600&display=swap";
+
+:root {
+    --green-saturad: #1ADC4B;
+    --green-normal: #097324;
+    --green-black: #001601;
+    --green-neutral: #8CAF95;
+    --green-white: #DCF1E1;
+    --button-gap: .3rem;
+    --medium-gap: .9rem;
+    --font-size-smail: .8em;
+    --border-gap: 1.8em
+}
+
+* {
+    font-family: "Poppins", sans-serif
+}
+
+body {
+    display: flex;
+    box-sizing: border-box;
+    background-color: var(--green-black);
+    color: #f5deb3;
+    height: 100vh;
+    background-image: url(imagens/bg.png);
+    background-size: cover
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: var(--border-gap);
+    margin: auto
+}
+
+.input-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: var(--border-gap);
+    border: solid 2px color-mix(in srgb, var(--green-neutral), var(--green-black) 60%);
+    border-radius: 23px;
+    background-color: var(--green-black);
+    background-image: linear-gradient(298deg, rgba(2, 89, 24, 0.5746673669467788) 0%, rgba(0, 22, 1, 0) 37%), url(imagens/logo_imc.png);
+    background-size: contain;
+    background-repeat: no-repeat
+}
+
+.btn-sex {
+    border: solid 1px var(--green-saturad);
+    vertical-align: baseline;
+    border-radius: 50vh;
+    font-weight: 300;
+    font-size: var(--font-size-smail);
+    color: var(--green-saturad);
+    width: 8.5em;
+    height: 2em;
+    margin-bottom: var(--medium-gap);
+    fill: var(--green-saturad);
+    background-color: transparent;
+    transition: .15s ease-out
+}
+
+.btn-sex:hover {
+    border: none;
+    cursor: pointer;
+    color: var(--green-white);
+    background-color: var(--green-normal);
+    fill: var(--green-white)
+}
+
+.btn-sex>svg {
+    height: 1em
+}
+
+.group-btn-sex {
+    display: flex;
+    gap: var(--button-gap)
+}
+
+.group-input-number {
+    display: flex;
+    flex-direction: column;
+    gap: .9em
+}
+
+.form-main-container {
+    width: 12.5em;
+    margin-top: 7em
+}
+
+.main-number {
+    padding-left: 1em;
+    color: var(--green-saturad);
+    width: calc(100% - 1em);
+    height: 3em;
+    border: none;
+    border-radius: 50vh;
+    background-color: transparent;
+    border: solid 1px var(--green-neutral);
+    transition: .15s ease-out
+}
+
+.main-number:hover {
+    background-color: color-mix(in srgb, var(--green-normal), transparent 83%)
+}
+
+.main-number:focus {
+    border: solid 1px var(--green-saturad);
+    color: var(--green-saturad);
+    background-color: color-mix(in srgb, var(--green-normal), transparent 83%)
+}
+
+.main-number::placeholder {
+    color: var(--green-neutral);
+    font-weight: 300;
+    font-size: calc(var(--font-size-smail) + .3em)
+}
+
+.group-btn-submit {
+    margin-top: 1.8em;
+    max-height: 3.3em;
+    display: flex;
+    gap: var(--button-gap)
+}
+
+.btn-load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.3em;
+    height: 3.3em;
+    border-radius: 50vh;
+    background-color: var(--green-normal);
+    transition: transform .15s ease-out
+}
+
+.btn-load:hover {
+    cursor: pointer;
+    transform: rotate(45deg)
+}
+
+.btn-load>svg {
+    fill: var(--green-saturad);
+    margin-right: .2em
+}
+
+.calculator-button {
+    font-weight: 400;
+    color: var(--green-black);
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    border-radius: 50vh;
+    background-color: var(--green-saturad);
+    font-size: 1.3em;
+    overflow: hidden;
+    transition: .15s ease-out
+}
+
+.calculator-button:hover {
+    cursor: pointer;
+    background-color: var(--green-normal)
+}
+
+.output-date {
+    width: 19em;
+    min-width: 19em;
+    background-color: var(--green-black);
+    background-image: linear-gradient(-298deg, rgba(2, 89, 24, 0.5746673669467788) 0%, rgba(0, 22, 1, 0) 37%);
+    border-radius: 1.4em;
+    border: solid 2px color-mix(in srgb, var(--green-neutral), var(--green-black) 60%)
+}
+
+.group-feedback {
+    text-align: center;
+    margin-top: var(--border-gap)
+}
+
+.group-feedback>h2 {
+    color: var(--green-white);
+    font-size: 1.3em;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 0
+}
+
+.group-feedback>p {
+    margin-top: 0;
+    font-size: calc(var(--font-size-smail)+.1em);
+    font-style: italic;
+    color: var(--green-white)
+}
+
+.group-feedback .line {
+    background-color: #097324;
+    width: 10em;
+    border-bottom: 1px solid var(--green-saturad);
+    margin-top: var(--button-gap);
+    margin-left: var(--border-gap)
+}
+
+.group-result {
+    text-align: center;
+    margin: var(--border-gap);
+    margin: auto;
+    width: calc(18.7em - var(--border-gap)*2);
+    border-radius: 1.3em;
+    height: 172px;
+    background-color: var(--green-black)
+}
+
+.group-result-border {
+    text-align: center;
+    padding: 2px;
+    margin: var(--border-gap);
+    margin: auto;
+    width: calc(18.7em - var(--border-gap)*2);
+    border-radius: 1.4em;
+    height: 172px;
+    background: linear-gradient(180deg, rgba(1, 38, 3, 0) 30%, rgba(26, 220, 75, 1) 92%)
+}
+
+.group-result .imc-number {
+    text-align: center;
+    color: var(--green-saturad);
+    font-weight: 200;
+    font-size: 5.5em;
+    padding: 3px;
+    margin: 0;
+    height: 100px;
+    box-sizing: border-box
+}
+
+.result-interpretation {
+    margin: 1em
+}
+
+.result-interpretation>.label {
+    color: var(--green-white);
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: .7em
+}
+
+.result-interpretation>.resultado-label {
+    color: var(--green-black);
+    gap: var(--medium-gap);
+    justify-content: center;
+    display: flex;
+    font-weight: 500;
+    font-size: var(--font-size-smail);
+    background: linear-gradient(80deg, rgba(220, 241, 225, 1) 30%, rgba(127, 139, 130, 1) 92%);
+    padding: .3em 0;
+    border-radius: 50vh
+}
+
+.group-imc-article {
+    margin-left: var(--border-gap);
+    margin-top: var(--medium-gap)
+}
+
+.group-imc-article>h3 {
+    color: var(--green-neutral);
+    font-size: calc(var(--font-size-smail)+.1em)
+}
+
+.group-imc-article>p {
+    width: 21em;
+    color: var(--green-neutral);
+    font-size: var(--font-size-smail);
+    margin-top: var(--button-gap)
+}
+
+.group-imc-article p>a {
+    color: var(--green-saturad);
+    font-size: var(--font-size-smail);
+    margin-left: var(--button-gap)
+}
+
+@media screen and (max-width: 40em) {
+    main {
+        display: flex;
+        margin-top: 4em;
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--border-gap)
+    }
+
+    .input-date {
+        width: 300px
+    }
+
+    .form-main-container {
+        width: 320px
+    }
+
+    .group-btn-sex {
+        margin-top: 40px
+    }
+
+    .btn-sex {
+        width: 100em;
+        height: 3em
+    }
+
+    .output-date {
+        width: 22.2em;
+        padding-bottom: var(--border-gap)
+    }
+
+    .group-result {
+        width: 270px
+    }
+
+    .group-result-border {
+        width: 270px;
+        text-align: center;
+        padding: 2px
+    }
+}
